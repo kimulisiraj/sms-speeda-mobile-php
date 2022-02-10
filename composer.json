@@ -3,7 +3,9 @@
     "description": "Send SMS using speed mobile api",
     "keywords": [
         "kimulisiraj",
-        "sms-speeda-mobile-php"
+        "sms-speeda-mobile-php",
+        "sms",
+        "sms-client"
     ],
     "homepage": "https://github.com/kimulisiraj/sms-speeda-mobile-php",
     "license": "MIT",
