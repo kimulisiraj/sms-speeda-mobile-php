@@ -4,7 +4,6 @@ use Kimulisiraj\SmsSpeedaMobile\Api\SendResponse;
 use Kimulisiraj\SmsSpeedaMobile\SmsSpeedaMobile;
 
 it('can test', function () {
-
     $mock = mock(SmsSpeedaMobile::class)->expect(
         getBalance: fn () => ['BalanceAmount' => 1000, 'CurrenceCode' => 'UGX'],
     );
