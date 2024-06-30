@@ -24,8 +24,8 @@ $client = new \Kimulisiraj\SmsSpeedaMobile\SmsSpeedaMobile(
 );
 
 $response = $client->send(
+    to: 2567xxxxxxxx,
     mesage:'Hello, Kimulisiraj!'
-    to: 256783211233
 )
 return $response; 
 ```
@@ -41,12 +41,12 @@ $response->getMessageId(); // I.E 12345
 ### Chaining 
 ```php
 $client = Kimulisiraj\SmsSpeedaMobile::config([
-    'apiKey' => 'your-api-key',
-    'apiPassword' => 'your-api-password',
+    'apiKey' => 'your-api-key', //You can set and use env('SPEEDAMOBILE_SMS_API_ID')
+    'apiPassword' => 'your-api-password', ////You can set and use env('SPEEDAMOBILE_SMS_API_PASSWORD')
 ]);
 
 $response = $client->mesage('Hello, Kimulisiraj!')
-        ->to('Hello, Kimulisiraj!');
+        ->to('2567xxxxxxxx')
         ->send();
 
 return $response 
