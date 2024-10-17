@@ -8,83 +8,83 @@ use JsonException;
 class MessageStatusResponse
 {
     public function __construct(
-        private string  $messageId,
-        private string  $phoneNumber,
-        private string  $messageBody,
-        private string  $MessageType,
-        private string  $messageLength,
-        private string  $messageParts,
-        private string  $messageCost,
-        private string  $deliveryStatus,
-        private string  $uniqueId,
-        private int  $errorCode,
-        private string  $errorDescription,
-        private string  $sentDateTime,
-        private string  $remarks,
+        private  $messageId,
+        private  $phoneNumber,
+        private  $messageBody,
+        private  $MessageType,
+        private  $messageLength,
+        private  $messageParts,
+        private  $messageCost,
+        private  $deliveryStatus,
+        private  $uniqueId,
+        private  $errorCode,
+        private  $errorDescription,
+        private  $sentDateTime,
+        private  $remarks,
     ) {
     }
 
-    public function getMessageId(): string
+    public function getMessageId()
     {
         return $this->messageId;
     }
 
-    public function getPhoneNumber(): string
+    public function getPhoneNumber()
     {
         return $this->phoneNumber;
     }
 
-    public function getMessageBody(): string
+    public function getMessageBody()
     {
         return $this->messageBody;
     }
 
-    public function getMessageType(): string
+    public function getMessageType()
     {
         return $this->MessageType;
     }
 
-    public function getMessageLength(): string
+    public function getMessageLength()
     {
         return $this->messageLength;
     }
 
-    public function getMessageParts(): string
+    public function getMessageParts()
     {
         return $this->messageParts;
     }
 
-    public function getMessageCost(): string
+    public function getMessageCost()
     {
         return $this->messageCost;
     }
 
-    public function getDeliveryStatus(): string
+    public function getDeliveryStatus()
     {
         return $this->deliveryStatus;
     }
 
-    public function getUniqueId(): string
+    public function getUniqueId()
     {
         return $this->uniqueId;
     }
 
-    public function getErrorCode(): int
+    public function getErrorCode()
     {
         return $this->errorCode;
     }
 
-    public function getErrorDescription(): string
+    public function getErrorDescription()
     {
         return $this->errorDescription;
     }
 
-    public function getSentDateTime(): string
+    public function getSentDateTime()
     {
         return $this->sentDateTime;
     }
 
-    public function getRemarks(): string
+    public function getRemarks()
     {
         return $this->remarks;
     }
