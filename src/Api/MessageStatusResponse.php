@@ -8,19 +8,19 @@ use JsonException;
 class MessageStatusResponse
 {
     public function __construct(
-        private  $messageId,
-        private  $phoneNumber,
-        private  $messageBody,
-        private  $MessageType,
-        private  $messageLength,
-        private  $messageParts,
-        private  $messageCost,
-        private  $deliveryStatus,
-        private  $uniqueId,
-        private  $errorCode,
-        private  $errorDescription,
-        private  $sentDateTime,
-        private  $remarks,
+        private $messageId,
+        private $phoneNumber,
+        private $messageBody,
+        private $MessageType,
+        private $messageLength,
+        private $messageParts,
+        private $messageCost,
+        private $deliveryStatus,
+        private $uniqueId,
+        private $errorCode,
+        private $errorDescription,
+        private $sentDateTime,
+        private $remarks,
     ) {
     }
 

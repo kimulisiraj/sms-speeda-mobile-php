@@ -4,7 +4,6 @@ namespace Kimulisiraj\SmsSpeedaMobile\Api;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Psr7\Message;
 use GuzzleHttp\RequestOptions;
 use JsonException;
 use Kimulisiraj\SmsSpeedaMobile\Exceptions\SendException;
@@ -22,7 +21,8 @@ class Client
         private \GuzzleHttp\Client $client,
         private string             $apiKey,
         private string             $apiPassword,
-    ) {}
+    ) {
+    }
 
     /**
      * @throws SendException
@@ -57,7 +57,7 @@ class Client
         $sendRequest = new MessageStatusRequest($messageId);
 
         try {
-            $response = $this->client->get(self::API_ENDPOINT . self::ACTION_MESSAGE_STATUS,[
+            $response = $this->client->get(self::API_ENDPOINT . self::ACTION_MESSAGE_STATUS, [
                 RequestOptions::QUERY => [
                     ...$sendRequest->toRequest(),
                 ],

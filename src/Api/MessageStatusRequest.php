@@ -27,7 +27,7 @@ class MessageStatusRequest
     public function toRequest(): array
     {
         return [
-            "message_id" => $this->messageId
+            "message_id" => $this->messageId,
         ];
     }
 }
