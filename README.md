@@ -52,6 +52,50 @@ $response = $client->mesage('Hello, Kimulisiraj!')
 return $response 
 ```
 
+### Query Delivery Report / Message Status
+```php
+  $client = new \Kimulisiraj\SmsSpeedaMobile\SmsSpeedaMobile(
+        apiKey:"your-username",
+        apiSecret: "your-password"
+        );
+
+ $response = $client->messageStatus(
+             messageId: 'xxxxxxx' //Message ID You Received at The Time of Submit E.G 4234
+             );
+return response()->json([
+        'messageId' => $response->getMessageId(),
+        'phoneNumber' => $response->getPhoneNumber(),
+        'messageBody' => $response->getMessageBody(),
+        'MessageType' => $response->getMessageType(),
+        'messageLength' => $response->getMessageLength(),
+        'messageParts' => $response->getMessageParts(),
+        'messageCost' => $response->getMessageCost(),
+        'deliveryStatus' => $response->getDeliveryStatus(),
+        'uniqueId' => $response->getUniqueId(),
+        'errorCode' => $response->getErrorCode(),
+        'errorDescription' => $response->getErrorDescription(),
+        'sentDateTime' => $response->getSentDateTime(),
+        'remarks' => $response->getRemarks(),
+    ]);
+````
+
+### From the response you can access:
+```php
+$response->getMessageId(), // Message ID of the request
+$response->getPhoneNumber(), // Phone Number to which message was sent
+$response->getMessageBody(), // Text of the SMS message
+$response->getMessageType(), // Message Encoding
+$response->getMessageLength(), // Length of Message
+$response->getMessageParts(), // No of Message parts
+$response->getMessageCost(), // Amount Deducted from account
+$response->getDeliveryStatus(), // Delivery Status Can Be One Of the following (Pending, Delivered, Undeliverable, Acknowledged, Expired, Accepted, Rejected, Unknown, Failed, DND)
+$response->getUniqueId(), // Carrier Generated SMS ID
+$response->getErrorCode(), // Error Code If Any
+$response->getErrorDescription(), // Error Description If Any
+$response->getSentDateTime(), // SMS Sent Date Time in UTC (Universal TimeCoordinate)
+$response->getRemarks(), // Remarks for the Request
+```
+
 ### Get balance
 ```php
   $client = new \Kimulisiraj\SmsSpeedaMobile\SmsSpeedaMobile(
@@ -59,8 +103,9 @@ return $response
     apiSecret: "your-password",
 );
 
-$client->getBalance() // ['BalanceAmount' => 1000, 'CurrenceCode' => 'UGX'],
+$client->getBalance(); // ['BalanceAmount' => 1000, 'CurrenceCode' => 'UGX'],
 ````
+
 ## Testing
 
 ```bash

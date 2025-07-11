@@ -2,6 +2,8 @@
 
 namespace Kimulisiraj\SmsSpeedaMobile\Api;
 
+use JsonException;
+
 class SendResponse
 {
     public const FAILED = 'F';
@@ -51,7 +53,7 @@ class SendResponse
     }
 
     /**
-     * @throws \JsonException
+     * @throws JsonException
      */
     public static function fromResponse(string $response): self
     {
