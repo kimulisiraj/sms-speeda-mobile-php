@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kimulisiraj\SmsSpeedaMobile\Api;
 
 use Kimulisiraj\SmsSpeedaMobile\Exceptions\InvalidMessageException;
@@ -7,7 +9,7 @@ use Kimulisiraj\SmsSpeedaMobile\Exceptions\InvalidMessageException;
 class MessageStatusRequest
 {
     public function __construct(
-        private string  $messageId,
+        private readonly string $messageId,
     ) {
     }
 
@@ -16,7 +18,7 @@ class MessageStatusRequest
      */
     public function validate(): void
     {
-        if (empty($this->messageId)) {
+        if ($this->messageId === '') {
             throw new InvalidMessageException('No `messageId` provided');
         }
     }
@@ -27,7 +29,7 @@ class MessageStatusRequest
     public function toRequest(): array
     {
         return [
-            "message_id" => $this->messageId,
+            'message_id' => $this->messageId,
         ];
     }
 }

@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kimulisiraj\SmsSpeedaMobile\Exceptions;
 
-class SendException extends \Exception
+use Exception;
+
+class SendException extends Exception
 {
 }

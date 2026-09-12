@@ -1,16 +1,14 @@
-name: Check & fix styling
+name: Rector
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
-  php-cs-fixer:
+  rector:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
-        with:
-          ref: ${{ github.head_ref }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -22,10 +20,5 @@ jobs:
       - name: Install dependencies
         run: composer update --prefer-dist --no-interaction
 
-      - name: Run PHP CS Fixer
-        run: vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --allow-risky=yes
-
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: Fix styling
+      - name: Run Rector
+        run: vendor/bin/rector process --dry-run
