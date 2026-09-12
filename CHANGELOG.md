@@ -2,6 +2,37 @@
 
 All notable changes to `sms-speeda-mobile-php` will be documented in this file.
 
+## 1.1.0 - 2026-09-12
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 1.3.3 to 1.3.4 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/9
+* Bump dependabot/fetch-metadata from 1.3.4 to 1.3.5 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/10
+* Bump dependabot/fetch-metadata from 1.3.5 to 1.3.6 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/11
+* Bump dependabot/fetch-metadata from 1.3.6 to 1.4.0 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/12
+* Bump dependabot/fetch-metadata from 1.4.0 to 1.5.1 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/13
+* Bump dependabot/fetch-metadata from 1.5.1 to 1.6.0 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/14
+* Fixed and improved documentation in README.md by @macdanson in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/17
+* Message Status Fetching by @macdanson in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/18
+* Bump actions/checkout from 3 to 4 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/15
+* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/16
+* Bump stefanzweifel/git-auto-commit-action from 5 to 6 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/19
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/21
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.4.0 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/20
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/22
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/24
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/23
+* Bump dependabot/fetch-metadata from 2.5.0 to 3.1.0 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/26
+* Bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/27
+* Chore/drop php 8.1 modernize tooling by @kimulisiraj in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/28
+
+### New Contributors
+
+* @macdanson made their first contribution in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/17
+* @kimulisiraj made their first contribution in https://github.com/kimulisiraj/sms-speeda-mobile-php/pull/28
+
+**Full Changelog**: https://github.com/kimulisiraj/sms-speeda-mobile-php/compare/1.0...1.1.0
+
 ## Unreleased
 
 ### Breaking
