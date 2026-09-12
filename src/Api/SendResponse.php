@@ -1,42 +1,40 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kimulisiraj\SmsSpeedaMobile\Api;
 
 use JsonException;
+use Kimulisiraj\SmsSpeedaMobile\Exceptions\SendException;
 
 class SendResponse
 {
     public const FAILED = 'F';
+
     public const SUCCESS = 'S';
 
     public function __construct(
-        private string $message,
-        private string  $code,
-        private string  $status,
+        private readonly string $message,
+        private readonly string $code,
+        private readonly string $status,
     ) {
     }
 
     public function hasError(): bool
     {
-        return  $this->status === self::FAILED;
+        return $this->status === self::FAILED;
     }
 
-    /**
-     * @return string
-     */
     public function getCode(): string
     {
         return $this->code;
     }
 
-    public function getMessage(): ?string
+    public function getMessage(): string
     {
         return $this->message;
     }
 
-    /**
-     * @return string
-     */
     public function getStatus(): string
     {
         return $this->hasError() ? 'FAILED' : 'OK';
@@ -53,16 +51,27 @@ class SendResponse
     }
 
     /**
+     * @throws SendException
      * @throws JsonException
      */
     public static function fromResponse(string $response): self
     {
-        $res = json_decode($response, true, 512, JSON_THROW_ON_ERROR);
+        $decoded = json_decode($response, true, 512, JSON_THROW_ON_ERROR);
 
-        return new SendResponse(
-            message: $res['remarks'],
-            code: $res['message_id'],
-            status: $res['status']
+        if (! is_array($decoded)) {
+            throw new SendException('Send response is not a JSON object');
+        }
+
+        foreach (['remarks', 'message_id', 'status'] as $requiredKey) {
+            if (! array_key_exists($requiredKey, $decoded)) {
+                throw new SendException(sprintf('Send response is missing the `%s` key', $requiredKey));
+            }
+        }
+
+        return new self(
+            message: (string) $decoded['remarks'],
+            code: (string) $decoded['message_id'],
+            status: (string) $decoded['status'],
         );
     }
 }
