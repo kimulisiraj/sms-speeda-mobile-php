@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kimulisiraj\SmsSpeedaMobile\Exceptions;
 
-class InvalidNumberException extends \Exception
+use Exception;
+
+class InvalidNumberException extends Exception
 {
 }
